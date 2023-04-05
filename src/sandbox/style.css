@@ -16,6 +16,10 @@ header h1 a, nav ul li, nav, ul li a {
     color: #000000;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* homepage */
 #homepage {
     display: flex;
@@ -26,7 +30,19 @@ header h1 a, nav ul li, nav, ul li a {
     margin-top: 10rem;
 }
 
-/* subtitle pages */
+/* suggested pages */
 .title {
     font-weight: bold;
 }
+
+/* detail page */
+.movie-details {
+    display: flex;
+    align-items: flex-end;
+}
+
+.movie-details ul li {
+    text-decoration: none;
+}
+
+
