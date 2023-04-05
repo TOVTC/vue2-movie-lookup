@@ -1,0 +1,32 @@
+main {
+    margin: 5rem 10rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+}
+
+header h1 a, nav ul li, nav, ul li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #000000;
+}
+
+/* homepage */
+#homepage {
+    display: flex;
+    justify-content: center;
+}
+
+#search-form {
+    margin-top: 10rem;
+}
+
+/* subtitle pages */
+.title {
+    font-weight: bold;
+}
