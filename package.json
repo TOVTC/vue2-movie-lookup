@@ -1,4 +1,22 @@
 {
+  "name": "vue-movie-lookup",
+  "description": "",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TOVTC/vue-movie-lookup.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TOVTC/vue-movie-lookup/issues"
+  },
+  "homepage": "https://github.com/TOVTC/vue-movie-lookup#readme",
   "dependencies": {
     "vue": "^2.7.14",
     "vuetify": "^2.6.0"
