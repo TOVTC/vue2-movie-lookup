@@ -14,8 +14,11 @@
 </template>
 
 <style>
-main {
-    margin: 5rem 10rem;
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000000;
 }
 
 header {
@@ -26,25 +29,25 @@ header {
     margin: 1.5rem;
 }
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
 header a, nav a {
   text-decoration: none;
   font-weight: bold;
   color: #000000;
 }
 
+nav {
+  padding: 30px;
+}
+
 nav a.router-link-exact-active {
   color: #808080;
+}
+
+.main {
+  margin: 5rem 10rem;
+}
+
+.title {
+    font-weight: bold;
 }
 </style>
