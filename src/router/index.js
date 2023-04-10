@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ResultsView from '../views/ResultsView.vue'
 import MovieDetailsView from '../views/MovieDetailsView.vue'
 import TrendingView from '../views/TrendingView.vue'
 import PopularView from '../views/PopularView.vue'
@@ -14,6 +15,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/results',
+    name: 'results',
+    component: ResultsView
   },
   {
     // eventually add id and props true

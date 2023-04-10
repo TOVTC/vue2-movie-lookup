@@ -22,22 +22,22 @@
         <section>
             <h3>Similar Films:</h3>
             <ul>
-                <li>
-                    <a href="movie-details.html"><span class="title">Movie Title (2023)</span> - PG</a>
-                </li>
-                <li>
-                    <a href="movie-details.html"><span class="title">Movie Title (2023)</span> - PG</a>
-                </li>
-                <li>
-                    <a href="movie-details.html"><span class="title">Movie Title (2023)</span> - PG</a>
-                </li>
-                <li>
-                    <a href="movie-details.html"><span class="title">Movie Title (2023)</span> - PG</a>
-                </li>
-                <li>
-                    <a href="movie-details.html"><span class="title">Movie Title (2023)</span> - PG</a>
-                </li>
-            </ul>
+            <li>
+                <router-link to="/movie-details"><span class="title">Movie Title (2023)</span> - PG</router-link>
+            </li>
+            <li>
+                <router-link to="/movie-details"><span class="title">Movie Title (2023)</span> - PG</router-link>
+            </li>
+            <li>
+                <router-link to="/movie-details"><span class="title">Movie Title (2023)</span> - PG</router-link>
+            </li>
+            <li>
+                <router-link to="/movie-details"><span class="title">Movie Title (2023)</span> - PG</router-link>
+            </li>
+            <li>
+                <router-link to="/movie-details"><span class="title">Movie Title (2023)</span> - PG</router-link>
+            </li>
+        </ul>
         </section>
     </div>
 </template>

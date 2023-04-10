@@ -3,7 +3,7 @@
     <form id="search-form">
         <label for="movie-name">Enter a movie name:</label><br/>
         <input type="text" id="search" name="movie-name">
-        <button><router-link to="/movie-details">Search</router-link></button>
+        <router-link to="/results"><button>Search</button></router-link>
     </form>
   </section>
 </template>

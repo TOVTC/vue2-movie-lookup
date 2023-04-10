@@ -35,12 +35,14 @@ header a, nav a {
   color: #000000;
 }
 
-nav {
-  padding: 30px;
-}
-
 nav a.router-link-exact-active {
   color: #808080;
+}
+
+ul li {
+  list-style-type: none;
+  text-decoration: none;
+  color: #000000;
 }
 
 .main {
