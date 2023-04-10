@@ -20,4 +20,12 @@
         </ul>
     </section>
 </template>
-  
+
+<script>
+import MediaService from '@/services/MediaService.js'
+export default {
+    created () {
+        MediaService.getMovies()
+    }
+}
+</script>
