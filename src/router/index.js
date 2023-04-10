@@ -30,7 +30,8 @@ const routes = [
   {
     path: '/trending',
     name: 'trending',
-    component: TrendingView
+    component: TrendingView,
+    props: true
   },
   {
     path: '/popular',

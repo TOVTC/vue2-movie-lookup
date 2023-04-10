@@ -1,19 +1,16 @@
 <template>
     <ul>
-        <router-link to="/movie-details">
-            <li><span class="title">Movie Title (2023)</span> - PG</li>
-        </router-link>
-        <router-link to="/movie-details">
-            <li><span class="title">Movie Title (2023)</span> - PG</li>
-        </router-link>
-        <router-link to="/movie-details">
-            <li><span class="title">Movie Title (2023)</span> - PG</li>
-        </router-link>
-        <router-link to="/movie-details">
-            <li><span class="title">Movie Title (2023)</span> - PG</li>
-        </router-link>
-        <router-link to="/movie-details">
-            <li><span class="title">Movie Title (2023)</span> - PG</li>
+        
+        <router-link v-for="(movie, index) in movies" :key="index" to="/movie-details">
+            <li><span class="title">{{ movie.original_title }}</span></li>
         </router-link>
     </ul>
 </template>
+
+<script>
+    export default {
+        props: {
+            movies: Array
+        }
+    }
+</script>
