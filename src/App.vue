@@ -3,7 +3,6 @@
     <header>
           <router-link to="/"><h1>Movie Lookup</h1></router-link>
         <nav>
-          <router-link to="/about">About</router-link> |
           <router-link to="/trending">Trending</router-link> |
           <router-link to="/popular">Popular</router-link> |
           <router-link to="/top-rated">Top Rated</router-link> |
