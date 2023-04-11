@@ -34,7 +34,8 @@
   Special thanks to:</br>
   Dan's answer [here](https://stackoverflow.com/questions/66210222/vue-refresh-page-on-param-id-changes-for-the-same-page) on route refreshes</br>
   RAH's answer [here](https://stackoverflow.com/questions/50828904/using-environment-variables-with-vue-js) on .env variables</br>
-  and Raj's answer [here](https://stackoverflow.com/questions/63526486/vue-router-catch-all-wildcard-not-working) on wildcard routing
+  Raj's answer [here](https://stackoverflow.com/questions/63526486/vue-router-catch-all-wildcard-not-working) on wildcard routing</br>
+  and [this](https://learnvue.co/articles/deploy-vue-to-github-pages) article on deploying Vue apps
   </br>
   </br>
   This product uses the TMDB API but is not endorsed or certified by TMDB.
