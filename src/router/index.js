@@ -47,6 +47,11 @@ const routes = [
     path: '/now-playing',
     name: 'now-playing',
     component: NowPlayingView
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: 'not-found',
+    component: HomeView
   }
 ]
 

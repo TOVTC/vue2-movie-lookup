@@ -23,7 +23,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #000000;
-  min-height: 50vh
+  min-height: 100vh
 }
 
 header, footer {

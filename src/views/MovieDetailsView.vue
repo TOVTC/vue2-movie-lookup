@@ -6,14 +6,14 @@
                 <img :src="getUrl" :alt="getAltText" />
                 <div class="movie-details">
                     <ul>
-                        <li>{{ film.tagline ? `"${film.tagline}"` : "" }}</li>
-                        <li>{{ film.release_date ? `Release Date - ${film.release_date}` : "" }} </li>
-                        <li>{{ getRuntime ? `Runtime - ${getRuntime}` : "" }}</li>
-                        <li>{{ getGenres ? `Genres - ${getGenres}` : ""}}</li>
-                        <li>Languages ({{ film.original_language ? film.original_language : "" }}){{ getLanguages ? ` - ${getLanguages}` : "" }}</li>
-                        <li>{{ getCompanies ? `Production Company - ${getCompanies}` : "" }}</li>
-                        <li><a :href="getLink"><span class="exception">{{ getLink ? getLink : "" }}</span></a></li>
-                        <li id="description">{{ film.overview ? `Synopsis: ${film.overview}` : "" }}</li>
+                        <li v-if="film.tagline">{{ `"${film.tagline}"` }}</li>
+                        <li v-if="film.release_date">{{ `Release Date - ${film.release_date}` }} </li>
+                        <li v-if="getRunTime">{{`Runtime - ${getRuntime}` }}</li>
+                        <li v-if="getGenres">{{ getGenres ? `Genres - ${getGenres}` : ""}}</li>
+                        <li v-if="getLanguages">Languages {{ film.original_language ? `(${film.original_language})` : "" }}{{ getLanguages ? ` - ${getLanguages}` : "" }}</li>
+                        <li v-if="getCompanies">{{ getCompanies ? `Production Company - ${getCompanies}` : "" }}</li>
+                        <li v-if="getLink"><a :href="getLink"><span class="exception">{{ getLink ? getLink : "" }}</span></a></li>
+                        <li id="description" v-if="film.overview.length">{{ film.overview ? `Synopsis: ${film.overview}` : "" }}</li>
                     </ul>
                 </div>
             </div>
@@ -86,32 +86,44 @@ import MovieList from '@/components/MovieList.vue'
         getRuntime() {
             let hours = Math.floor(this.film.runtime/60)
             let minutes = this.film.runtime % 60
-            return `${hours}h ${minutes}min`
+            if (hours !== 0 && minutes !== 0) {
+                return `${hours}h ${minutes}min`
+            }
+            return false
         },
         getGenres() {
             let genres = []
             this.film.genres.forEach(genre => {
                 genres.push(genre.name)
             })
-            return genres.join(", ")
+            if (genres.length) {
+                return genres.join(", ")
+            }
+            return false
         },
         getLanguages() {
             let languages = []
             this.film.spoken_languages.forEach(language => {
                 languages.push(language.english_name)
             })
-            return languages.join(", ")
+            if (languages.length) {
+                return languages.join(", ")
+            }
+            return false
         },
         getCompanies() {
             let companies = []
             this.film.production_companies.forEach(studio => {
                 companies.push(studio.name)
             })
-            return companies.join(", ")
+            if (companies.length) {
+                return companies.join(", ")
+            }
+            return false
         },
         getLink() {
             if (!this.film.homepage || this.film.homepage === "") {
-                return ""
+                return false
             }
             return this.film.homepage
         },
