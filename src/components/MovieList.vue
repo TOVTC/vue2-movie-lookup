@@ -2,7 +2,7 @@
     <ul>
         
         <router-link v-for="(movie, index) in movies" :key="index" to="/movie-details">
-            <li><span class="title">{{ movie.original_title }}</span></li>
+            <li>{{ movie.title }} ({{ movie.release_date.split("-")[0] }})</li>
         </router-link>
     </ul>
 </template>
@@ -14,3 +14,9 @@
         }
     }
 </script>
+
+<style scoped>
+    li {
+        padding: 0.5rem;
+    }
+</style>
