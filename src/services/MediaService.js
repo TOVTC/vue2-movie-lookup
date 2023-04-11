@@ -11,6 +11,10 @@ const apiClient = axios.create({
 })
 
 export default {
+    async getDetails(id) {
+        let response = await apiClient.get(`/3/movie/${id}?api_key=${TMDB_KEY.TMDB_KEY}`)
+        return response.data
+    },
     async getTrending() {
         let response = await apiClient.get(`/3/trending/movie/day?api_key=${TMDB_KEY.TMDB_KEY}&language=en-US&page=1`)
         return response.data.results

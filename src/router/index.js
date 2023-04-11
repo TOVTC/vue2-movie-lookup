@@ -22,8 +22,7 @@ const routes = [
     component: ResultsView
   },
   {
-    // eventually add id and props true
-    path: '/movie-details',
+    path: '/movie-details/:id',
     name: 'movie-details',
     component: MovieDetailsView
   },
