@@ -9,7 +9,11 @@
           <router-link to="/now-playing">Now Playing</router-link>
         </nav>
     </header>
-    <router-view/>
+    <router-view :key="$route.fullPath"></router-view>
+    <footer>
+      <img src="@/assets/tmdb.svg" id="logo"/>
+      <p>This product uses the TMDB API but is not endorsed or certified by TMDB</p>
+    </footer>
   </div>
 </template>
 
@@ -19,9 +23,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #000000;
+  min-height: 50vh
 }
 
-header {
+header, footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,5 +56,9 @@ ul li {
 
 .title {
     font-weight: bold;
+}
+
+#logo {
+  max-width: 10rem;
 }
 </style>

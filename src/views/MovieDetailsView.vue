@@ -1,19 +1,19 @@
 <template>
     <div class="main">
       <section>
-            <h2>{{ film.original_title }} ({{ film.release_date.split("-")[0] }})</h2>
+            <h2>{{ film.original_title ? film.original_title : film.title }} {{ film.release_date ? `(${film.release_date.split("-")[0]})` : "" }}</h2>
             <div class="movie-details">
                 <img :src="getUrl" :alt="getAltText" />
                 <div class="movie-details">
                     <ul>
-                        <li>"{{ film.tagline }}"</li>
-                        <li>Release Date - {{ film.release_date }} </li>
-                        <li>Runtime - {{ getRuntime }}</li>
-                        <li>Genres - {{ getGenres }}</li>
-                        <li>Languages ({{ film.original_language }}) - {{ getLanguages }}</li>
-                        <li>Production Company - {{ getCompanies }}</li>
-                        <li><a :href="getLink"><span class="exception">{{ getLink }}</span></a></li>
-                        <li id="description">Synopsis:<br/><br/>{{ film.overview }}</li>
+                        <li>{{ film.tagline ? `"${film.tagline}"` : "" }}</li>
+                        <li>{{ film.release_date ? `Release Date - ${film.release_date}` : "" }} </li>
+                        <li>{{ getRuntime ? `Runtime - ${getRuntime}` : "" }}</li>
+                        <li>{{ getGenres ? `Genres - ${getGenres}` : ""}}</li>
+                        <li>Languages ({{ film.original_language ? film.original_language : "" }}){{ getLanguages ? ` - ${getLanguages}` : "" }}</li>
+                        <li>{{ getCompanies ? `Production Company - ${getCompanies}` : "" }}</li>
+                        <li><a :href="getLink"><span class="exception">{{ getLink ? getLink : "" }}</span></a></li>
+                        <li id="description">{{ film.overview ? `Synopsis: ${film.overview}` : "" }}</li>
                     </ul>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <template>
     <ul v-if="movies.length">
         <router-link v-for="(movie, index) in movies" :key="index" :to="{ name: 'movie-details', params: { id: movie.id }}">
-            <li>{{ movie.title }} ({{ movie.release_date.split("-")[0] }})</li>
+            <li>{{ movie.title }} {{ movie.release_date ? `(${movie.release_date.split("-")[0]})` : "" }}</li>
         </router-link>
     </ul>
     <ul v-else>

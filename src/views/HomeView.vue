@@ -1,29 +1,28 @@
 <template>
   <section id="homepage" class="main">
-    <form id="search-form">
+    <form id="search-form" @submit.prevent="search">
         <label for="movie-name">Enter a movie name:</label><br/>
-        <input type="text" id="search" name="movie-name">
-        <router-link to="/results"><button>Search</button></router-link>
+        <input type="text" id="search" v-model="movieName">
+        <router-link :to="{ name: 'results', params: { movieName: movieName }}"><button type="submit">Search</button></router-link>
     </form>
   </section>
 </template>
 
 <script>
-// // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
-// export default {
-//   name: 'HomeView',
-//   components: {
-//     HelloWorld
-//   }
-// }
+  export default {
+    data() {
+      return {
+        movieName: ""
+      }
+    },
+  }
 </script>
 
 <style scoped>
 #homepage {
     display: flex;
     justify-content: center;
+    min-height: 75vh
 }
 
 #search-form {
