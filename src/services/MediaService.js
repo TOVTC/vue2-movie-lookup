@@ -30,5 +30,13 @@ export default {
     async getNowPlaying() {
         let response = await apiClient.get(`/3/movie/now_playing?api_key=${TMDB_KEY.TMDB_KEY}&language=en-US&page=1`)
         return response.data.results
+    },
+    async getRecommended(id) {
+        let response = await apiClient.get(`/3/movie/${id}/recommendations?api_key=${TMDB_KEY.TMDB_KEY}&language=en-US&page=1`)
+        return response.data.results
+    },
+    async getSimilar(id) {
+        let response = await apiClient.get(`/3/movie/${id}/similar?api_key=${TMDB_KEY.TMDB_KEY}&language=en-US&page=1`)
+        return response.data.results
     }
 }

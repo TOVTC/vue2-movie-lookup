@@ -3,14 +3,14 @@
       <section>
             <h2>{{ film.original_title }} ({{ film.release_date.split("-")[0] }})</h2>
             <div class="movie-details">
-                <img :src="getUrl" alt="movie-poster">
+                <img :src="getUrl" :alt="getAltText" />
                 <div class="movie-details">
                     <ul>
                         <li>"{{ film.tagline }}"</li>
-                        <li>Release Date - {{ film.release_date }}</li>
+                        <li>Release Date - {{ film.release_date }} </li>
                         <li>Runtime - {{ getRuntime }}</li>
                         <li>Genres - {{ getGenres }}</li>
-                        <li>Languages - {{ getLanguages }}</li>
+                        <li>Languages ({{ film.original_language }}) - {{ getLanguages }}</li>
                         <li>Production Company - {{ getCompanies }}</li>
                         <li><a :href="getLink"><span class="exception">{{ getLink }}</span></a></li>
                         <li id="description">Synopsis:<br/><br/>{{ film.overview }}</li>
@@ -18,33 +18,64 @@
                 </div>
             </div>
         </section>
-        <section>
-            <h3>Similar Films:</h3>
-            <MovieList :movies="movies"/>
+        <div id="suggested">
+            <section class="list">
+            <h3>Recommended Films:</h3>
+            <MovieList :movies="recommended"/>
         </section>
+        <section class="list">
+            <h3>Similar Films:</h3>
+            <MovieList :movies="similar"/>
+        </section>
+        </div>
     </div>
 </template>
 
 <script>
 import MediaService from '@/services/MediaService.js'
 import MovieList from '@/components/MovieList.vue'
+
  export default {
+    props: ["id"],
     components: {
                 MovieList
             },
     data () {
         return {
-            film: {},
-            movies: [
+            film: {
+                original_title: "",
+                release_date: "",
+                tagline: "",
+                overview: "",
+                poster_path: "",
+                original_language: "",
+                runtime: 0,
+                genres: [],
+                spoken_languages: [],
+                production_companies: [],
+                homepage: []
+            },
+            recommended: [
                 {
-                    id: 505642,
-                    original_language: "en",
-                    original_title: "Black Panther: Wakanda Forever",
-                    overview: "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death.  As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
-                    poster_path: "/sv1xJUazXeYqALzczSZ3O6nkH75.jpg",
-                    release_date: "2022-11-09",
-                    title: "Black Panther: Wakanda Forever",
+                    id: 0,
+                    original_language: "",
+                    original_title: "",
+                    overview: "",
+                    poster_path: "",
+                    release_date: "",
+                    title: "",
                 },
+            ],
+            similar: [
+                {
+                    id: 0,
+                    original_language: "",
+                    original_title: "",
+                    overview: "",
+                    poster_path: "",
+                    release_date: "",
+                    title: "",
+                }   
             ]
         }
     },
@@ -83,10 +114,15 @@ import MovieList from '@/components/MovieList.vue'
                 return ""
             }
             return this.film.homepage
+        },
+        getAltText() {
+            return this.film.title + " movie poster"
         }
     },
     async created () {
-        this.film = await MediaService.getDetails(document.location.pathname.split("/")[2])
+        this.film = await MediaService.getDetails(this.id)
+        this.recommended = await MediaService.getRecommended(this.id)
+        this.similar = await MediaService.getSimilar(this.id)
     }
  }
 </script>
@@ -100,6 +136,7 @@ ul li a {
 
 img {
     max-height: 35rem;
+    margin-top: 1rem;
 }
 
 li {
@@ -117,6 +154,15 @@ li {
 
 .movie-details ul li {
     text-decoration: none;
+}
+
+.list {
+    width: 50%;
+    margin-top: 3rem;
+}
+
+#suggested {
+    display: flex;
 }
 
 #description {

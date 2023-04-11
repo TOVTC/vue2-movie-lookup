@@ -24,13 +24,13 @@ const routes = [
   {
     path: '/movie-details/:id',
     name: 'movie-details',
-    component: MovieDetailsView
+    component: MovieDetailsView,
+    props: true
   },
   {
     path: '/trending',
     name: 'trending',
     component: TrendingView,
-    props: true
   },
   {
     path: '/popular',
