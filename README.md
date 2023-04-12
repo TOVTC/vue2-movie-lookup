@@ -24,7 +24,7 @@
   For local use, after cloning, create a .env file containing your TMDB api key, then type "npm run serve" to start the server. This application is also available at the live link.
   
   ## Usage Information<a name="usage"></a>
-  [Movie Lookup]("https://tovtc.github.io/vue-movie-lookup/")</br>
+  [Movie Lookup](https://tovtc.github.io/vue-movie-lookup/)</br>
     
   This application is a simple movie search website.</br>
   </br>![Movie Lookup](./src/assets/movie-lookup.png "Movie Lookup")</br>
@@ -36,7 +36,8 @@
   Dan's answer [here](https://stackoverflow.com/questions/66210222/vue-refresh-page-on-param-id-changes-for-the-same-page) on route refreshes</br>
   RAH's answer [here](https://stackoverflow.com/questions/50828904/using-environment-variables-with-vue-js) on .env variables</br>
   Raj's answer [here](https://stackoverflow.com/questions/63526486/vue-router-catch-all-wildcard-not-working) on wildcard routing</br>
-  and [this](https://cli.vuejs.org/guide/deployment.html#github-pages) article on using "sh ./deploy.sh" to deploy Vue apps</br>
+  [this](https://cli.vuejs.org/guide/deployment.html#github-pages) article on using "sh ./deploy.sh" to deploy Vue apps</br>
+  and [elogonme](https://github.com/elogonme) for helping me debug deployed .env variables on gh-pages</br>
   </br>
   This product uses the TMDB API but is not endorsed or certified by TMDB.
   

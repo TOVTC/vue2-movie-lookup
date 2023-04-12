@@ -30,7 +30,12 @@ export default {
         }
     },
     async created() {
-        this.movies = await MediaService.getResults(this.movieName)
+        try {
+            this.movies = await MediaService.getResults(this.movieName)
+        }
+        catch (err) {
+            alert("An error occurred")
+        }
     }
 }
 </script>

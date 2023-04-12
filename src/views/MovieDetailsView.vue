@@ -132,9 +132,14 @@ import MovieList from '@/components/MovieList.vue'
         }
     },
     async created () {
-        this.film = await MediaService.getDetails(this.id)
-        this.recommended = await MediaService.getRecommended(this.id)
-        this.similar = await MediaService.getSimilar(this.id)
+        try {
+            this.film = await MediaService.getDetails(this.id)
+            this.recommended = await MediaService.getRecommended(this.id)
+            this.similar = await MediaService.getSimilar(this.id)
+        }
+        catch (err) {
+            alert("An error occurred")
+        }
     }
  }
 </script>

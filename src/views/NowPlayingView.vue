@@ -19,7 +19,12 @@ export default {
         }
     },
     async created () {
-        this.movies = await MediaService.getNowPlaying()
+        try {
+            this.movies = await MediaService.getNowPlaying()
+        }
+        catch (err) {
+            alert("An error occurred")
+        }
     }
 }
 </script>
