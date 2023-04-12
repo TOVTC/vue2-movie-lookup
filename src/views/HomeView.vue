@@ -22,7 +22,6 @@
 #homepage {
     display: flex;
     justify-content: center;
-    min-height: 75vh
 }
 
 #search-form {
