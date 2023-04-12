@@ -37,6 +37,7 @@
   RAH's answer [here](https://stackoverflow.com/questions/50828904/using-environment-variables-with-vue-js) on .env variables</br>
   Raj's answer [here](https://stackoverflow.com/questions/63526486/vue-router-catch-all-wildcard-not-working) on wildcard routing</br>
   [this](https://cli.vuejs.org/guide/deployment.html#github-pages) article on using "sh ./deploy.sh" to deploy Vue apps</br>
+  barrystone's [article](https://hackmd.io/@barrystone/vue_vue-env-variable-and-github-page-deploy) for the sh file run command</br>
   and [elogonme](https://github.com/elogonme) for helping me debug deployed .env variables on gh-pages</br>
   </br>
   This product uses the TMDB API but is not endorsed or certified by TMDB.
