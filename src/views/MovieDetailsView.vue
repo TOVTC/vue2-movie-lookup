@@ -133,12 +133,22 @@ import MovieList from '@/components/MovieList.vue'
     },
     async created () {
         try {
-            this.film = await MediaService.getDetails(this.id)
-            this.recommended = await MediaService.getRecommended(this.id)
-            this.similar = await MediaService.getSimilar(this.id)
+            let film = await MediaService.getDetails(this.id)
+            let recommended = await MediaService.getRecommended(this.id)
+            let similar = await MediaService.getSimilar(this.id)
+
+            if (!film || !recommended || !similar) {
+            alert("An error occurred")
+                return
+            }
+
+            this.film = film
+            this.recommended = recommended
+            this.similar = similar
         }
         catch (err) {
             alert("An error occurred")
+            console.log(err)
         }
     }
  }

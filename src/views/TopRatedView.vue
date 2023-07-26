@@ -20,10 +20,18 @@ export default {
     },
     async created () {
         try {
-            this.movies = await MediaService.getTopRated()
+            let movies = await MediaService.getTopRated()
+
+            if (!movies) {
+                alert("An error occurred")
+                return
+            }
+
+            this.movies = movies
         }
         catch (err) {
             alert("An error occurred")
+            console.log(err)
         }
     }
 }
